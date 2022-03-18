@@ -52,4 +52,9 @@ public class LoginTest {
         val status = SqlData.getUserStatus(authInfo.getLogin());
         assertEquals("blocked", status);
     }
+
+    @AfterAll
+    static void cleanTables() {
+        SqlData.cleanData();
+    }
 }
